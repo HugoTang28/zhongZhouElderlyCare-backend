@@ -1,0 +1,34 @@
+package com.zzyl.framework.config;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * Knife4j 接口文档配置
+ */
+@Configuration
+public class Knife4jConfig {
+
+    @Bean
+    public OpenAPI openAPI() {
+        String schemeName = "Authorization";
+        return new OpenAPI()
+                .info(new Info()
+                        .title("中州养老管理系统接口文档")
+                        .description("中州养老 zzyl 后端接口")
+                        .version("1.0.0")
+                        .contact(new Contact().name("zzyl")))
+                .schemaRequirement(schemeName, new SecurityScheme()
+                        .type(SecurityScheme.Type.HTTP)
+                        .scheme("bearer")
+                        .bearerFormat("JWT")
+                        .in(SecurityScheme.In.HEADER)
+                        .name("Authorization"))
+                .addSecurityItem(new SecurityRequirement().addList(schemeName));
+    }
+}
