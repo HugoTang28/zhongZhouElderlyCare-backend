@@ -12,12 +12,7 @@ target/
 .classpath
 .project
 .settings/
-.vscode/
 
-### Node ###
-ui/node_modules/
-ui/dist/
-node_modules/
 
 ### OS ###
 .DS_Store
