@@ -19,4 +19,13 @@ public class Constants {
 
     /** 超级管理员角色编码 */
     public static final String SUPER_ADMIN = "admin";
+
+    /** 家属端短信验证码缓存 key 前缀 */
+    public static final String FAMILY_CODE_KEY = "family_code:";
+
+    /** 用户类型：管理后台管理员 */
+    public static final String USER_TYPE_ADMIN = "admin";
+
+    /** 用户类型：家属端 */
+    public static final String USER_TYPE_FAMILY = "family";
 }
