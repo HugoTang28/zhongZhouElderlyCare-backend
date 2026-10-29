@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface BizModule {
-    String value();
+    String value(); // 模块 key
 
-    String perm();
+    String perm(); // 权限前缀
 }

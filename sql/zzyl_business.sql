@@ -14,7 +14,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 -- 预约登记
 CREATE TABLE visit_appointment (
-    id           BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     visitor_name VARCHAR(50)  NOT NULL COMMENT '访客姓名',
     phone        VARCHAR(20)  DEFAULT '' COMMENT '访客手机号',
     elder_name   VARCHAR(50)  DEFAULT '' COMMENT '探访老人姓名',
@@ -31,7 +31,7 @@ CREATE TABLE visit_appointment (
 
 -- 来访登记
 CREATE TABLE visit_registration (
-    id           BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     visitor_name VARCHAR(50)  NOT NULL COMMENT '访客姓名',
     phone        VARCHAR(20)  DEFAULT '' COMMENT '访客手机号',
     id_card      VARCHAR(20)  DEFAULT '' COMMENT '证件号码',
@@ -53,7 +53,7 @@ CREATE TABLE visit_registration (
 
 -- 入住管理
 CREATE TABLE checkin_admission (
-    id           BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     elder_name   VARCHAR(50)  NOT NULL COMMENT '老人姓名',
     id_card      VARCHAR(20)  DEFAULT '' COMMENT '身份证号',
     sex          TINYINT      DEFAULT 0 COMMENT '性别：0男 1女',
@@ -74,7 +74,7 @@ CREATE TABLE checkin_admission (
 
 -- 退住管理
 CREATE TABLE checkin_checkout (
-    id            BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     elder_name    VARCHAR(50)  NOT NULL COMMENT '老人姓名',
     bed_id        BIGINT       DEFAULT NULL COMMENT '床位ID',
     check_out_time DATETIME    DEFAULT NULL COMMENT '退住时间',
@@ -95,7 +95,7 @@ CREATE TABLE checkin_checkout (
 
 -- 房型管理
 CREATE TABLE resident_room (
-    id         BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     room_no    VARCHAR(20)  NOT NULL COMMENT '房号',
     type_name  VARCHAR(50)  DEFAULT '' COMMENT '房型名称（如：标准单间）',
     floor      VARCHAR(10)  DEFAULT '' COMMENT '楼层',
@@ -112,7 +112,7 @@ CREATE TABLE resident_room (
 
 -- 床位管理
 CREATE TABLE resident_bed (
-    id          BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     bed_no      VARCHAR(20)  NOT NULL COMMENT '床位号',
     room_id     BIGINT       DEFAULT NULL COMMENT '所属房型ID',
     status      TINYINT      DEFAULT 0 COMMENT '状态：0空闲 1占用 2维修',
@@ -126,7 +126,7 @@ CREATE TABLE resident_bed (
 
 -- 合同管理
 CREATE TABLE resident_contract (
-    id           BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     contract_no  VARCHAR(50)  NOT NULL COMMENT '合同编号',
     elder_name   VARCHAR(50)  DEFAULT '' COMMENT '老人姓名',
     bed_id       BIGINT       DEFAULT NULL COMMENT '床位ID',
@@ -145,7 +145,7 @@ CREATE TABLE resident_contract (
 
 -- 请假管理
 CREATE TABLE resident_leave (
-    id          BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     elder_name  VARCHAR(50)  NOT NULL COMMENT '老人姓名',
     bed_id      BIGINT       DEFAULT NULL COMMENT '床位ID',
     start_time  DATETIME     DEFAULT NULL COMMENT '请假开始时间',
@@ -166,7 +166,7 @@ CREATE TABLE resident_leave (
 
 -- 护理计划
 CREATE TABLE service_plan (
-    id          BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     plan_name   VARCHAR(50)  NOT NULL COMMENT '计划名称',
     elder_name  VARCHAR(50)  DEFAULT '' COMMENT '老人姓名',
     start_date  DATETIME     DEFAULT NULL COMMENT '开始日期',
@@ -183,7 +183,7 @@ CREATE TABLE service_plan (
 
 -- 护理任务
 CREATE TABLE service_task (
-    id          BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     task_name   VARCHAR(50)  NOT NULL COMMENT '任务名称',
     elder_name  VARCHAR(50)  DEFAULT '' COMMENT '老人姓名',
     executor    VARCHAR(50)  DEFAULT '' COMMENT '执行人',
@@ -203,7 +203,7 @@ CREATE TABLE service_task (
 
 -- 账单管理
 CREATE TABLE finance_bill (
-    id          BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     bill_no     VARCHAR(50)  NOT NULL COMMENT '账单编号',
     elder_name  VARCHAR(50)  DEFAULT '' COMMENT '老人姓名',
     bill_month  VARCHAR(10)  DEFAULT '' COMMENT '账期(YYYY-MM)',
@@ -220,7 +220,7 @@ CREATE TABLE finance_bill (
 
 -- 预存管理
 CREATE TABLE finance_prestore (
-    id          BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     elder_name  VARCHAR(50)  NOT NULL COMMENT '老人姓名',
     amount      DECIMAL(10,2) DEFAULT 0.00 COMMENT '本次金额',
     balance     DECIMAL(10,2) DEFAULT 0.00 COMMENT '账户余额',
@@ -239,7 +239,7 @@ CREATE TABLE finance_prestore (
 
 -- 订单管理
 CREATE TABLE order_info (
-    id            BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     order_no      VARCHAR(50)  NOT NULL COMMENT '订单编号',
     customer_name VARCHAR(50)  DEFAULT '' COMMENT '客户姓名',
     product_name  VARCHAR(100) DEFAULT '' COMMENT '商品/服务名称',
@@ -255,7 +255,7 @@ CREATE TABLE order_info (
 
 -- 退款管理
 CREATE TABLE order_refund (
-    id          BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     order_no    VARCHAR(50)  NOT NULL COMMENT '原订单编号',
     refund_no   VARCHAR(50)  DEFAULT '' COMMENT '退款单号',
     amount      DECIMAL(10,2) DEFAULT 0.00 COMMENT '退款金额',
@@ -273,7 +273,7 @@ CREATE TABLE order_refund (
 -- ----------------------------
 
 CREATE TABLE customer_info (
-    id         BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     name       VARCHAR(50)  NOT NULL COMMENT '客户姓名',
     phone      VARCHAR(20)  DEFAULT '' COMMENT '手机号',
     id_card    VARCHAR(20)  DEFAULT '' COMMENT '证件号',
@@ -292,7 +292,7 @@ CREATE TABLE customer_info (
 -- ----------------------------
 
 CREATE TABLE message_push (
-    id         BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     title      VARCHAR(100) NOT NULL COMMENT '消息标题',
     content    VARCHAR(500) DEFAULT '' COMMENT '消息内容',
     receiver   VARCHAR(100) DEFAULT '' COMMENT '接收人/角色',
@@ -312,7 +312,7 @@ CREATE TABLE message_push (
 
 -- 设备管理
 CREATE TABLE iot_device (
-    id           BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     device_name  VARCHAR(50)  NOT NULL COMMENT '设备名称',
     device_no    VARCHAR(50)  DEFAULT '' COMMENT '设备编号',
     device_type  VARCHAR(50)  DEFAULT '' COMMENT '设备类型（手环/床垫/摄像头）',
@@ -328,7 +328,7 @@ CREATE TABLE iot_device (
 
 -- 报警规则
 CREATE TABLE iot_alarm_rule (
-    id            BIGINT       NOT NULL COMMENT '主键',
+    id           BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
     rule_name     VARCHAR(50)  NOT NULL COMMENT '规则名称',
     device_type   VARCHAR(50)  DEFAULT '' COMMENT '适用设备类型',
     alarm_condition VARCHAR(50) DEFAULT '' COMMENT '触发条件（如：心率>120）',

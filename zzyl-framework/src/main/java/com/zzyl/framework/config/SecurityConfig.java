@@ -57,6 +57,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // 登录、接口文档等匿名放行
                         .requestMatchers("/auth/login", "/captcha/**").permitAll()
+                        .requestMatchers("/family/auth/**").permitAll()
                         .requestMatchers("/doc.html", "/webjars/**", "/v3/api-docs/**",
                                 "/swagger-resources/**", "/favicon.ico").permitAll()
                         .anyRequest().authenticated())
