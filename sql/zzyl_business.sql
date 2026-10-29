@@ -1,5 +1,5 @@
 -- ============================================================
--- 中州养老管理系统 · 业务模块数据表
+-- 家家乐养老管理系统 · 业务模块数据表
 -- 说明：所有表均含审计字段 id / create_time / update_time / create_by / update_by
 --       id 使用 BIGINT（与 BaseEntity 的 IdType.ASSIGN_ID 雪花算法一致）
 -- 字符集：utf8mb4

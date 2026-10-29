@@ -19,8 +19,8 @@ public class Knife4jConfig {
         String schemeName = "Authorization";
         return new OpenAPI()
                 .info(new Info()
-                        .title("中州养老管理系统接口文档")
-                        .description("中州养老 zzyl 后端接口")
+                        .title("家家乐养老管理系统接口文档")
+                        .description("家家乐养老 zzyl 后端接口")
                         .version("1.0.0")
                         .contact(new Contact().name("zzyl")))
                 .schemaRequirement(schemeName, new SecurityScheme()

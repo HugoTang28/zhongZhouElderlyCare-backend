@@ -9,7 +9,7 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>zzyl</name>
-    <description>中州养老管理系统</description>
+    <description>家家乐养老管理系统</description>
 
     <modules>
         <module>zzyl-admin</module>

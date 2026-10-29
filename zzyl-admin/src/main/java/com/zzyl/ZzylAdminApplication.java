@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 中州养老管理系统 - 启动类
+ * 家家乐养老管理系统 - 启动类
  */
 @SpringBootApplication
 @MapperScan("com.zzyl.**.mapper")
@@ -15,7 +15,7 @@ public class ZzylAdminApplication {
         SpringApplication.run(ZzylAdminApplication.class, args);
         System.out.println("""
                 --------------------------------------------------
-                  中州养老管理系统启动成功
+                  家家乐养老管理系统启动成功
                   接口文档: http://localhost:9995/doc.html
                 --------------------------------------------------
                 """);
